@@ -1,0 +1,198 @@
+/* Updated: 2025-10-13T10:51:31.275Z */
+/* Updated: 2025-10-13T09:06:31.746Z */
+/* Updated: 2025-10-12T09:10:15.346Z */
+/* Updated: 2025-10-12T08:34:13.919Z */
+/* Updated: 2025-10-12T08:01:47.233Z */
+/* Updated: 2025-10-12T07:51:33.221Z */
+/* Updated: 2025-10-11T20:54:22.104Z */
+/* Updated: 2025-10-11T20:52:01.095Z */
+/* Updated: 2025-10-11T20:27:56.544Z */
+/* Updated: 2025-10-11T18:47:33.716Z */
+/* Updated: 2025-10-11T18:43:32.500Z */
+/* Updated: 2025-10-11T17:45:22.655Z */
+/* Updated: 2025-10-11T17:11:37.910Z */
+/* Updated: 2025-10-11T17:03:38.999Z */
+/* Updated: 2025-10-11T16:34:43.767Z */
+/* Updated: 2025-10-11T16:34:01.949Z */
+/* Updated: 2025-10-11T16:29:45.927Z */
+/* Updated: 2025-10-11T16:28:22.491Z */
+/* Updated: 2025-10-11T16:26:47.954Z */
+/* Updated: 2025-10-11T16:18:20.306Z */
+/* Updated: 2025-10-11T16:17:53.629Z */
+/* Updated: 2025-10-11T14:32:58.880Z */
+/* Updated: 2025-10-11T06:21:11.975Z */
+/* Updated: 2025-10-11T06:17:43.862Z */
+/* Updated: 2025-10-11T06:02:23.389Z */
+/* Updated: 2025-10-11T06:00:36.811Z */
+/* Updated: 2025-10-10T19:20:40.175Z */
+/* Updated: 2025-10-10T19:12:59.675Z */
+/* Updated: 2025-10-10T19:12:58.881Z */
+/* Updated: 2025-10-10T19:02:06.593Z */
+/* Updated: 2025-10-10T18:42:50.961Z */
+/* Updated: 2025-10-10T18:12:49.519Z */
+/* Updated: 2025-10-10T17:24:11.572Z */
+/* Updated: 2025-10-10T16:56:30.348Z */
+/* Updated: 2025-10-10T16:28:44.173Z */
+/* Updated: 2025-10-10T16:12:05.145Z */
+/* Updated: 2025-10-10T13:36:21.157Z */
+/* Updated: 2025-10-09T17:04:25.699Z */
+/* Updated: 2025-10-09T16:36:47.880Z */
+/* Updated: 2025-10-09T16:34:31.073Z */
+/* Updated: 2025-10-09T16:16:07.254Z */
+/* Updated: 2025-10-09T15:10:57.451Z */
+/* Updated: 2025-10-09T14:58:53.044Z */
+/* Updated: 2025-10-09T14:58:10.956Z */
+/* Updated: 2025-10-09T14:45:35.016Z */
+/* Updated: 2025-10-09T14:42:09.743Z */
+/* Updated: 2025-10-09T13:17:25.152Z */
+/* Updated: 2025-10-09T13:06:46.107Z */
+/* Updated: 2025-10-09T11:28:51.582Z */
+/* Updated: 2025-10-09T10:56:40.126Z */
+/* Updated: 2025-10-07T12:13:05.524Z */
+/* Updated: 2025-10-07T11:37:29.894Z */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 0%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 0%;
+  --primary: 25 100% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 45 100% 64%;
+  --secondary-foreground: 0 0% 0%;
+  --muted: 45 100% 97%;
+  --muted-foreground: 0 0% 45%;
+  --accent: 25 100% 50%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --border: 45 100% 85%;
+  --input: 45 100% 85%;
+  --ring: 25 100% 50%;
+  --chart-1: 25 100% 50%;
+  --chart-2: 45 100% 64%;
+  --chart-3: 30 100% 57%;
+  --chart-4: 45 100% 97%;
+  --chart-5: 45 100% 85%;
+  --sidebar: 0 0% 100%;
+  --sidebar-foreground: 0 0% 0%;
+  --sidebar-primary: 25 100% 50%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 45 100% 97%;
+  --sidebar-accent-foreground: 0 0% 0%;
+  --sidebar-border: 45 100% 85%;
+  --sidebar-ring: 25 100% 50%;
+}
+
+.dark {
+  --background: 0 0% 0%;
+  --foreground: 45 100% 64%;
+  --card: 0 0% 10%;
+  --card-foreground: 45 100% 64%;
+  --popover: 0 0% 10%;
+  --popover-foreground: 45 100% 64%;
+  --primary: 45 100% 64%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 0 0% 15%;
+  --secondary-foreground: 45 100% 64%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 65%;
+  --accent: 25 100% 50%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --ring: 25 100% 50%;
+  --chart-1: 25 100% 50%;
+  --chart-2: 30 100% 57%;
+  --chart-3: 45 100% 64%;
+  --chart-4: 0 0% 15%;
+  --chart-5: 0 0% 20%;
+  --sidebar: 0 0% 10%;
+  --sidebar-foreground: 45 100% 64%;
+  --sidebar-primary: 45 100% 64%;
+  --sidebar-primary-foreground: 0 0% 0%;
+  --sidebar-accent: 0 0% 15%;
+  --sidebar-accent-foreground: 45 100% 64%;
+  --sidebar-border: 0 0% 20%;
+  --sidebar-ring: 25 100% 50%;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    letter-spacing: -0.01em;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  
+  /* Enable text selection for content */
+  p, span, li, td, th, label, a {
+    user-select: text;
+  }
+  
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    html, body {
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  }
+}
+
+/* Hide Next.js error overlay portal */
+nextjs-portal {
+  display: none !important;
+}
