@@ -8,6 +8,10 @@ import { Wrench, Sparkles, HardHat, ShoppingCart, Truck } from 'lucide-react';
 import { ApplicationForm } from '@/components/ApplicationForm';
 import { useLanguage } from '@/contexts/LanguageContext';
 
+
+
+
+
 export default function JobsPage() {
   const { t } = useLanguage();
 
