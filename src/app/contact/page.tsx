@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, Instagram } from 'lucide-react';
 
 export default function ContactPage() {
   const { t } = useLanguage();
@@ -89,6 +89,14 @@ export default function ContactPage() {
         { text: '🔗 https://t.me/khorizon_work', link: 'https://t.me/khorizon_work' }
       ],
       color: 'bg-gradient-to-br from-[#FFD347]/10 to-[#FFB347]/10 text-[#FFD347]',
+    },
+    {
+      icon: Instagram,
+      title: 'Instagram',
+      details: [
+        { text: 'Follow us on Instagram', link: 'https://www.instagram.com/horizon_work_/' }
+      ],
+      color: 'bg-gradient-to-br from-[#FF7A00]/10 to-[#FFB347]/10 text-[#FF7A00]',
     },
   ];
 
