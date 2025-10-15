@@ -12,9 +12,13 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-const translations = {
+
+type Translations = Record<Language, Record<string, string>>;
+
+
+const translations: Translations = {
   ru: {
-    // Navigation
+        // Navigation
     'nav.home': 'Главная',
     'nav.about': 'О нас',
     'nav.jobs': 'Вакансии',
@@ -315,7 +319,7 @@ const translations = {
     'meta.description': 'Официальное трудоустройство за рубежом. Агентство с более чем 5-летним опытом.'
   },
   uz: {
-    // Navigation
+        // Navigation
     'nav.home': 'Bosh sahifa',
     'nav.about': 'Biz haqimizda',
     'nav.jobs': 'Bo\'sh ish o\'rinlari',
@@ -615,7 +619,7 @@ const translations = {
     'meta.description': 'Xorijda qonuniy ishga joylashish. 5 yildan ortiq tajribaga ega litsenziyalangan agentlik.'
   },
   en: {
-    // Navigation
+// Navigation
     'nav.home': 'Home',
     'nav.about': 'About Us',
     'nav.jobs': 'Vacancies',
@@ -921,12 +925,11 @@ export function LanguageProvider({ children }: {children: React.ReactNode;}) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Try to get saved language from localStorage
-    const saved = localStorage.getItem('language') as Language;
+    // ✅ Чуть безопаснее для TS
+    const saved = localStorage.getItem('language') as Language | null;
     if (saved && (saved === 'ru' || saved === 'uz' || saved === 'en')) {
       setLanguage(saved);
     } else {
-      // Detect browser language
       const browserLang = navigator.language.toLowerCase();
       if (browserLang.startsWith('ru')) {
         setLanguage('ru');
@@ -935,7 +938,6 @@ export function LanguageProvider({ children }: {children: React.ReactNode;}) {
       } else if (browserLang.startsWith('en')) {
         setLanguage('en');
       } else {
-        // Default to Russian
         setLanguage('ru');
       }
     }
@@ -945,23 +947,22 @@ export function LanguageProvider({ children }: {children: React.ReactNode;}) {
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
     localStorage.setItem('language', lang);
-    // Update HTML lang attribute
     document.documentElement.lang = lang;
   };
 
+  // ✅ Безопасный индекс для TS
   const t = (key: string): string => {
-    return translations[language][key] || key;
+    const dict = translations[language]; // тип: Record<string, string>
+    return dict[key] ?? key;
   };
 
-  // Don't render until language is loaded
-  if (!isLoaded) {
-    return null;
-  }
+  if (!isLoaded) return null;
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t }}>
       {children}
-    </LanguageContext.Provider>);
+    </LanguageContext.Provider>
+  );
 }
 
 export function useLanguage() {
