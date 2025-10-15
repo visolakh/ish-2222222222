@@ -94,7 +94,7 @@ export default function ContactPage() {
       icon: Instagram,
       title: 'Instagram',
       details: [
-        { text: 'Follow us on Instagram', link: 'https://www.instagram.com/horizon_work_/' }
+        { text: '🔗https://www.instagram.com/horizon_work_/', link: 'https://www.instagram.com/horizon_work_/' }
       ],
       color: 'bg-gradient-to-br from-[#FF7A00]/10 to-[#FFB347]/10 text-[#FF7A00]',
     },
