@@ -80,7 +80,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2 sm:gap-3 text-white/80 text-sm sm:text-[15px]">
                 <Globe className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0 text-[#FF7A00]" />
-                <a href="https://www.horizonwork.uz" target="_blank" rel="noopener noreferrer" className="break-words hover:text-[#FFD347] transition-colors">www.horizonwork.uz</a>
+                <a href="https://www.horizon-work.uz" target="_blank" rel="noopener noreferrer" className="break-words hover:text-[#FFD347] transition-colors">www.horizonwork.uz</a>
               </li>
               <li className="flex items-start gap-2 sm:gap-3 text-white/80 text-sm sm:text-[15px]">
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0 text-[#FF7A00]" />
