@@ -8,10 +8,6 @@ import { Wrench, Sparkles, HardHat, ShoppingCart, Truck } from 'lucide-react';
 import { ApplicationForm } from '@/components/ApplicationForm';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-
-
-
-
 export default function JobsPage() {
   const { t } = useLanguage();
 
@@ -329,6 +325,38 @@ export default function JobsPage() {
 
       {/* Application Form Section */}
       <ApplicationForm />
+
+
+  
+
+
+
+
+
+
+      {/* YouTube Shorts video section */}
+<div className="max-w-[900px] mx-auto my-12 p-4 bg-white rounded-2xl shadow-md">
+  {/* Заголовок с переводом */}
+  <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-center">
+    {t('jobs.video.title')}
+  </h3>
+
+  <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-xl">
+    {/* iframe с переводом в title */}
+    <iframe
+      src="https://www.youtube.com/embed/kV-8-514AZI?rel=0"
+      title={t('jobs.video.title')}
+      className="absolute top-0 left-0 w-full h-full border-0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowFullScreen
+      loading="lazy"
+    ></iframe>
+  </div>
+</div>
+
+
+
+
 
       <Footer />
     </div>
