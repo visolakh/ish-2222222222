@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -10,32 +10,43 @@ import { CheckCircle, Globe, Users, Home, Shield, ArrowRight, FileCheck, MapPin 
 import Link from 'next/link';
 import Image from 'next/image';
 import { ApplicationForm } from '@/components/ApplicationForm';
+import ApplyModal from '@/components/ApplyModal';
 
 export default function HomePage() {
   const { t } = useLanguage();
+  const [open, setOpen] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
 
   const services = [
-    {
-      icon: Shield,
-      title: t('services.legal.title'),
-      description: t('services.legal.desc'),
-    },
-    {
-      icon: Users,
-      title: t('services.support.title'),
-      description: t('services.support.desc'),
-    },
-    {
-      icon: CheckCircle,
-      title: t('services.verified.title'),
-      description: t('services.verified.desc'),
-    },
-    {
-      icon: Home,
-      title: t('services.housing.title'),
-      description: t('services.housing.desc'),
-    },
-  ];
+  {
+    icon: Shield,
+    title: t('services.legal.title'),
+    description: t('services.legal.desc')
+  },
+  {
+    icon: Users,
+    title: t('services.support.title'),
+    description: t('services.support.desc')
+  },
+  {
+    icon: CheckCircle,
+    title: t('services.verified.title'),
+    description: t('services.verified.desc')
+  },
+  {
+    icon: Home,
+    title: t('services.housing.title'),
+    description: t('services.housing.desc')
+  }];
+
+  const countryImages = {
+    israel: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/file-1760723841386.jpg',
+    hungary: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/file-1760723845545.jpg',
+    bulgaria: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/bulgaria-veliko-tarnovo-best-for-affordability-1760723849644.jpg',
+    czechia: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/6aa51a67c7672a9df2a1c345d308c3e6-1760723878077.webp',
+    russia: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/moskovskij-kreml-1760723860813.jpg',
+    croatia: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/96547f73e832f73676ecddac047c17c2-1760723867075.webp'
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -50,8 +61,8 @@ export default function HomePage() {
             alt="Airplane flying in sunset sky"
             fill
             className="object-cover"
-            priority
-          />
+            priority />
+
           {/* Gradient Overlay - Black transparent on left side */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent" />
         </div>
@@ -141,11 +152,11 @@ export default function HomePage() {
               </ul>
               
               <div className="mt-8 text-center">
-                <a 
-                  href="https://mehnat.uz" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
+                <a
+                  href="https://mehnat.uz"
+                  target="_blank"
+                  rel="noopener noreferrer">
+
                   <Button className="bg-gradient-to-r from-[#FF7A00] to-[#FFB347] hover:from-[#FF7A00]/90 hover:to-[#FFB347]/90 text-white rounded-lg transition-all duration-300 font-medium text-sm sm:text-base px-6 py-5 border-none">
                     {t('mehnat.button')}
                   </Button>
@@ -182,8 +193,8 @@ export default function HomePage() {
                       alt={t('about.license')}
                       width={800}
                       height={1131}
-                      className="w-full h-auto"
-                    />
+                      className="w-full h-auto" />
+
                   </div>
                 </div>
               </CardContent>
@@ -220,8 +231,8 @@ export default function HomePage() {
                       {service.description}
                     </CardDescription>
                   </CardContent>
-                </Card>
-              );
+                </Card>);
+
             })}
           </div>
         </div>
@@ -238,16 +249,21 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {[
-              { country: 'israel', flag: '🇮🇱', key: 'israel' },
-              { country: 'hungary', flag: '🇭🇺', key: 'hungary' },
-              { country: 'bulgaria', flag: '🇧🇬', key: 'bulgaria' },
-              { country: 'czechia', flag: '🇨🇿', key: 'czechia' },
-              { country: 'russia', flag: '🇷🇺', key: 'russia' },
-              { country: 'croatia', flag: '🇭🇷', key: 'croatia' },
-            ].map((item) => (
-              <Card key={item.country} className="overflow-hidden border-[#FFD347]/30 hover:border-[#FF7A00] hover:shadow-xl transition-all duration-300 bg-white group">
-                <div className="h-48 sm:h-56 bg-gradient-to-br from-[#FF7A00]/5 to-[#FFB347]/5 flex items-center justify-center border-b border-[#FFD347]/20">
-                  <span className="text-6xl sm:text-8xl transition-transform duration-300 group-hover:scale-110">{item.flag}</span>
+            { country: 'israel', flag: "", key: 'israel' },
+            { country: 'hungary', flag: "", key: 'hungary' },
+            { country: 'bulgaria', flag: "", key: 'bulgaria' },
+            { country: 'czechia', flag: "", key: 'czechia' },
+            { country: 'russia', flag: "", key: 'russia' },
+            { country: 'croatia', flag: "", key: 'croatia' }].
+            map((item) =>
+            <Card key={item.country} className="overflow-hidden border-[#FFD347]/30 hover:border-[#FF7A00] hover:shadow-xl transition-all duration-300 bg-white group">
+                <div className="relative h-48 sm:h-56 overflow-hidden border-b border-[#FFD347]/20">
+                  <Image
+                    src={countryImages[item.country as keyof typeof countryImages]}
+                    alt={t(`jobs.${item.key}`)}
+                    fill
+                    className="rounded-t-xl object-cover transition-transform duration-300 group-hover:scale-110 shadow-sm"
+                  />
                 </div>
                 <CardHeader>
                   <CardTitle className="text-xl sm:text-2xl text-[#000000] font-semibold" data-i18n={`jobs.${item.key}`}>{t(`jobs.${item.key}`)}</CardTitle>
@@ -256,14 +272,19 @@ export default function HomePage() {
                   <p className="text-[#000000]/70 mb-4 sm:mb-6 leading-relaxed font-light text-sm sm:text-base" data-i18n={`jobs.${item.key}.desc`}>
                     {t(`jobs.${item.key}.desc`)}
                   </p>
-                  <Link href={`/jobs?country=${item.country}`}>
-                    <Button className="w-full bg-gradient-to-r from-[#FF7A00] to-[#FFB347] hover:from-[#FF7A00]/90 hover:to-[#FFB347]/90 text-white rounded-lg transition-all duration-300 font-medium text-sm sm:text-base border-none" data-i18n="jobs.apply">
-                      {t('jobs.apply')}
-                    </Button>
-                  </Link>
+                  <Button 
+                    onClick={() => { 
+                      setSelectedCountry(t(`jobs.${item.key}`)); 
+                      setOpen(true); 
+                    }}
+                    className="w-full bg-gradient-to-r from-[#FF7A00] to-[#FFB347] hover:from-[#FF7A00]/90 hover:to-[#FFB347]/90 text-white rounded-lg transition-all duration-300 font-medium text-sm sm:text-base border-none" 
+                    data-i18n="jobs.apply"
+                  >
+                    {t('jobs.apply')}
+                  </Button>
                 </CardContent>
               </Card>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -284,6 +305,21 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+{/* Видео под секцией "Наша миссия" */}
+<div className="max-w-[900px] mx-auto mt-1 mb-8 bg-white rounded-2xl shadow-md">
+  <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-xl">
+    <iframe
+      src="https://www.youtube.com/embed/6jxfufz-JSU?rel=0"
+      className="absolute top-0 left-0 w-full h-full border-0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowFullScreen
+      loading="lazy"
+    ></iframe>
+  </div>
+</div>
+
+
+
 
       {/* CTA Section */}
       <section className="py-16 sm:py-24 relative">
@@ -314,7 +350,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      <ApplyModal open={open} onClose={() => setOpen(false)} country={selectedCountry} />
+
       <Footer />
-    </div>
-  );
+    </div>);
+
 }
