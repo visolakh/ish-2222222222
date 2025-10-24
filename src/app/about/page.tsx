@@ -30,7 +30,7 @@ export default function AboutPage() {
         
         <div className="max-w-[1200px] mx-auto relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-[#FFD347]">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#000000] mb-8 leading-snug">
               {t('about.title')}
             </h1>
             <p className="text-lg sm:text-xl text-white/80">
