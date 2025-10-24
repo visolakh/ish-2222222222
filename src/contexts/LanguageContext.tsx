@@ -22,7 +22,7 @@ const translations: Translations = {
     'nav.home': 'Главная',
     'nav.about': 'О нас',
     'nav.jobs': 'Вакансии',
-    'nav.howWeWork': 'Как мы работаем',
+    'nav.howWeWork': 'Наши услуги',
     'nav.contact': 'Контакты',
     'nav.legal': 'Правовая информация',
 
@@ -35,17 +35,75 @@ const translations: Translations = {
     'hero.cta': 'Подобрать вакансию',
     'hero.consultation': 'Бесплатная консультация',
 
+'about.values.title': 'Наши ценности',
+
+'about.values.item1.title': 'Прозрачность',
+'about.values.item1.desc': 'Открыто предоставляем информацию о вакансиях, условиях и работодателях. Работаем честно и официально.',
+
+'about.values.item2.title': 'Ответственность',
+'about.values.item2.desc': 'Выполняем обязательства перед кандидатами и партнёрами на каждом этапе сотрудничества.',
+
+'about.values.item3.title': 'Поддержка',
+'about.values.item3.desc': 'Сопровождаем кандидатов от консультации до полноценного трудоустройства за рубежом.',
+
+'about.values.item4.title': 'Надежность',
+'about.values.item4.desc': 'Работаем только с проверенными работодателями и соблюдаем все юридические требования.',
+
     // Services
-    'services.title': 'Наши услуги',
-    'services.subtitle': 'Полный спектр услуг для вашего успешного трудоустройства за рубежом',
-    'services.legal.title': 'Легальное трудоустройство',
-    'services.legal.desc': 'Официальное оформление всех документов и рабочих виз',
-    'services.support.title': 'Сопровождение на всех этапах',
-    'services.support.desc': 'Мы помогаем кандидатам от подачи заявки до трудоустройства',
-    'services.verified.title': 'Проверенные работодатели',
-    'services.verified.desc': 'Работаем только с надежными компаниями',
-    'services.housing.title': 'Программы адаптации и подготовки кадров',
-    'services.housing.desc': 'Организуем программы профессиональной адаптации и подготовки сотрудников, выезжающих для работы за рубеж',
+'services.title': 'Наши услуги',
+'services.subtitle': 'Полный комплекс поддержки для успешного трудоустройства за рубежом',
+
+'services.legal.title': 'Официальное трудоустройство',
+'services.legal.desc': 'Оформление документов и рабочих виз в соответствии с законодательством',
+
+'services.support.title': 'Сопровождение на всех этапах',
+'services.support.desc': 'Помогаем кандидатам от подачи заявки до начала работы',
+
+'services.verified.title': 'Проверенные работодатели',
+'services.verified.desc': 'Сотрудничаем только с проверенными и надёжными компаниями',
+
+'services.housing.title': 'Программы адаптации и подготовки',
+'services.housing.desc': 'Организуем профессиональную подготовку и адаптацию сотрудников перед выездом за рубеж',
+
+
+    // Services (Наши услуги и активность клиентов)
+    'servicesPage.title': 'Наши услуги и работа с клиентами',
+'servicesPage.intro': 'Мы предоставляем профессиональную поддержку на каждом этапе трудоустройства за рубежом.',
+
+'servicesPage.services.social.title': 'Информационные медиа и отчётность',
+'servicesPage.services.social.desc': 'Ведём прозрачную коммуникацию с клиентами через официальные социальные сети, публикуем реальные результаты и отчёты о проделанной работе.',
+
+'servicesPage.services.consult.title': 'Профессиональные консультации',
+'servicesPage.services.consult.desc': 'Проводим индивидуальные консультации, помогаем подобрать подходящую вакансию и даём честную оценку требований и условий работы за рубежом.',
+
+'servicesPage.services.fairs.title': 'Отборочные туры и ярмарки вакансий',
+'servicesPage.services.fairs.desc': 'Организуем и участвуем в официальных отборочных мероприятиях, практических экзаменах и собеседованиях с зарубежными работодателями.',
+
+'servicesPage.services.docs.title': 'Оформление документов',
+'servicesPage.services.docs.desc': 'Подготавливаем анкеты, резюме, трудовые договоры и весь пакет необходимых документов для легального трудоустройства.',
+
+'servicesPage.services.adapt.title': 'Курсы адаптации и подготовки',
+'servicesPage.services.adapt.desc': 'Готовим кандидатов к жизни и работе за границей: обучаем правилам безопасности, трудовой дисциплине и социальной адаптации.',
+
+'servicesPage.services.russian.title': 'Курсы русского языка',
+'servicesPage.services.russian.desc': 'Обучаем языку для прохождения собеседований, сдачи тестов и успешной коммуникации на рабочем месте.',
+
+'servicesPage.services.tickets.title': 'Организация выезда',
+'servicesPage.services.tickets.desc': 'Помогаем с перелётом, трансфером, бронированием и координацией поездки до места трудоустройства.',
+
+
+
+
+
+
+
+
+// Services → video block
+"servicesPage.video2.title": "Сопровождение кандидатов",
+"servicesPage.video2.subtitle": "Поддерживаем на каждом этапе выезда и трудоустройства",
+
+
+
 
     // Mission
     'mission.title': 'Наша миссия',
@@ -65,6 +123,14 @@ const translations: Translations = {
     'location.title': 'Наше местоположение',
     'location.address': 'г. Ташкент, махалля Буюк Ипак Йўли, дом 32, квартира 3, Ц-1',
 
+    // About → video block
+'about.video.title': 'Участие в ярмарке вакансий',
+'about.video.subtitle': 'Наша компания открыто участвует в государственных и региональных программах по трудоустройству.',
+
+"servicesPage.videoBlock.title": "Как мы работаем на практике",
+"servicesPage.videoBlock.subtitle": "Реальный процесс отбора и сопровождения кандидатов",
+
+
     // About Page - Updated stats
     'about.title': 'О компании',
     'about.subtitle': 'HORIZON WORK - надежный партнер в трудоустройстве за рубежом',
@@ -79,6 +145,17 @@ const translations: Translations = {
     'about.advantage3.desc': 'Все документы и контракты легальны',
     'about.advantage4': 'Более 200 трудоустроенных кандидатов в разных странах',
     'about.advantage4.desc': 'Мы помогаем кандидатам от подачи заявки до трудоустройства',
+     
+    // Values Section
+    'about.values.title': 'Наши ценности',
+    'about.values.item1.title': 'Прозрачность',
+    'about.values.item1.desc': 'Открыто предоставляем информацию о вакансиях, условиях и работодателях. Работаем честно и официально.',
+    'about.values.item2.title': 'Ответственность',
+    'about.values.item2.desc': 'Отвечаем за каждый этап процесса и выполняем обязательства перед кандидатами и партнерами.',
+    'about.values.item3.title': 'Поддержка',
+    'about.values.item3.desc': 'Сопровождаем кандидатов от консультации до полного трудоустройства за рубежом.',
+    'about.values.item4.title': 'Надежность',
+    'about.values.item4.desc': 'Работаем только с проверенными работодателями и партнёрами. Все процессы оформляются официально.',
 
     // Legal Information
     'about.legal.tin': 'ИНН',
@@ -114,6 +191,8 @@ const translations: Translations = {
     'jobs.employmentSphere3': 'Ресторанный и гостиничный бизнес',
     'jobs.employmentSphere4': 'Торговля и службы доставки',
     'jobs.whoWeSeek': 'Кого мы ищем?',
+
+    
 
     // Job Categories
     'jobs.category1.title': 'Технические специалисты',
@@ -215,48 +294,8 @@ const translations: Translations = {
     'jobs.duration.24months': '24 месяца',
     'jobs.duration.36months': '36 месяцев',
 
-    // How We Work
-    'howWeWork.title': 'Как мы работаем',
-    'howWeWork.subtitle': 'Простой и понятный процесс трудоустройства за рубежом',
-    'howWeWork.goalsTitle': 'Наши основные цели:',
-    'howWeWork.goal1': 'Помощь кандидатам в поиске работы, соответствующей их знаниям, навыкам и опыту',
-    'howWeWork.goal2': 'Содействие в оформлении документов и получении трудовой визы категории D',
-    'howWeWork.goal3': 'Организация курсов адаптации для выезжающих работников',
-    'howWeWork.goal4': 'Работа исключительно с официально зарегистрированными работодателями',
-    'howWeWork.goal5': 'Совместно с российскими партнёрами разработаны официальные языковые курсы и подготовительные программы',
-    'howWeWork.step1': 'Консультация',
-    'howWeWork.step1desc': 'Бесплатная консультация и подбор вакансий',
-    'howWeWork.step1.detail1': 'Бесплатная консультация по телефону или в офисе',
-    'howWeWork.step1.detail2': 'Анализ ваших навыков и опыта',
-    'howWeWork.step1.detail3': 'Подбор подходящих вакансий',
-    'howWeWork.step1.detail4': 'Полная информация о условиях работы',
-    'howWeWork.step2': 'Документы',
-    'howWeWork.step2desc': 'Подготовка и оформление всех необходимых документов',
-    'howWeWork.step2.detail1': 'Сбор необходимых документов',
-    'howWeWork.step2.detail2': 'Перевод и нотариальное заверение',
-    'howWeWork.step2.detail3': 'Подача документов на рабочую визу',
-    'howWeWork.step2.detail4': 'Оформление медицинских справок',
-    'howWeWork.step3': 'Виза',
-    'howWeWork.step3desc': 'Получение рабочей визы',
-    'howWeWork.step3.detail1': 'Подготовка к собеседованию в посольстве',
-    'howWeWork.step3.detail2': 'Сопровождение на собеседовании',
-    'howWeWork.step3.detail3': 'Получение рабочей визы',
-    'howWeWork.step3.detail4': 'Оформление трудового договора',
-    'howWeWork.step4': 'Выезд',
-    'howWeWork.step4desc': 'Организация выезда и встреча в стране назначения',
-    'howWeWork.step4.detail1': 'Помощь в покупке авиабилетов',
-    'howWeWork.step4.detail2': 'Встреча в аэропорту прибытия',
-    'howWeWork.step4.detail3': 'Сопровождение до места проживания',
-    'howWeWork.step4.detail4': 'Помощь в адаптации на новом месте',
-    'howWeWork.timeline': 'Сроки оформления',
-    'howWeWork.timeline.weeks': 'недели',
-    'howWeWork.timeline.weeksAlt': 'недель',
-    'howWeWork.timeline.months': 'месяца',
-    'howWeWork.timeline.docs': 'Подготовка документов',
-    'howWeWork.timeline.visa': 'Получение визы',
-    'howWeWork.timeline.total': 'Полный цикл до выезда',
-    'howWeWork.ready': 'Готовы начать?',
-    'howWeWork.ready.text': 'Запишитесь на бесплатную консультацию, и мы поможем вам сделать первый шаг к работе за рубежом',
+// Video Title
+    'jobs.video.title': 'Онлайн-собеседование: процесс оформления на работу в Израиль',
 
     // Contact
     'contact.title': 'Контакты',
@@ -303,11 +342,20 @@ const translations: Translations = {
     'application.form.error.title': 'Ошибка отправки',
     'application.form.error.message': 'Пожалуйста, попробуйте позже или свяжитесь с нами по телефону',
 
+    // Apply Modal
+    'modal.apply.title': 'Подать заявку',
+    'modal.apply.name': 'Имя',
+    'modal.apply.phone': 'Телефон',
+    'modal.apply.namePlaceholder': 'Ваше имя',
+    'modal.apply.phonePlaceholder': '+998 XX XXX XX XX',
+    'modal.apply.submit': 'Отправить',
+    'modal.apply.cancel': 'Отменить',
+
     // Footer
     'footer.description': 'Надёжный партнёр в поиске легальной работы за рубежом.',
     'footer.contacts': 'Контакты',
     'footer.address': 'г. Ташкент, махалля Буюк Ипак Йўли, дом 32, квартира 3, Ц-1',
-    'footer.rights': '© 2024 HORIZON WORK. Все права защищены.',
+    'footer.rights': 'Все права защищены.',
     'footer.quickLinks': 'Быстрые ссылки',
 
     // CTA
@@ -336,17 +384,53 @@ const translations: Translations = {
     'hero.cta': 'Vakansiya tanlash',
     'hero.consultation': 'Bepul maslahat',
 
+
+
+
+
     // Services
-    'services.title': 'Bizning xizmatlar',
-    'services.subtitle': 'Xorijda muvaffaqiyatli ishga joylashish uchun to\'liq xizmatlar',
-    'services.legal.title': 'Qonuniy ishga joylashish',
-    'services.legal.desc': 'Barcha hujjatlar va ish vizalarini rasmiy rasmiylashtrish',
-    'services.support.title': 'Barcha bosqichlarda hamrohlik',
-    'services.support.desc': 'Biz arizadan ish joylashgunga qadar nomzodlarga yordam beramiz',
-    'services.verified.title': 'Tekshirilgan ish beruvchilar',
-    'services.verified.desc': 'Faqat ishonchli kompaniyalar bilan ishlaymiz',
-    'services.housing.title': 'Xodimlarni tayyorlash va moslashuv dasturlari',
-    'services.housing.desc': 'Chet elda ishlash uchun ketayotgan xodimlar uchun kasbiy moslashuv va tayyorgarlik dasturlarini tashkil etamiz',
+'services.title': 'Xizmatlarimiz',
+'services.subtitle': 'Chet elda muvaffaqiyatli ishga joylashish uchun to\'liq qo\'llab-quvvatlash',
+
+'services.legal.title': 'Rasmiy ishga joylashish',
+'services.legal.desc': 'Hujjatlar va ishchi vizalarni qonuniy rasmiylashtirish',
+
+'services.support.title': 'Har bir bosqichda yordam',
+'services.support.desc': 'Ariza topshirishdan ish boshlashgacha nomzodlarga yordam beramiz',
+
+'services.verified.title': 'Ishonchli ish beruvchilar',
+'services.verified.desc': 'Faqat ishonchli va tekshirilgan kompaniyalar bilan hamkorlik qilamiz',
+
+'services.housing.title': 'Moslashuv va tayyorlov dasturlari',
+'services.housing.desc': 'Xorijda ishlashga ketayotgan xodimlar uchun tayyorgarlik va moslashuv dasturlarini tashkil etamiz',
+
+
+    // Services
+    'servicesPage.title': 'Xizmatlarimiz va mijozlar bilan ishlash',
+'servicesPage.intro': 'Biz chet elda ishga joylashishning har bir bosqichida professional qo\'llab-quvvatlashni ta\'minlaymiz.',
+
+'servicesPage.services.social.title': 'Axborot yordami va obro\' nazorati',
+'servicesPage.services.social.desc': 'Kompaniyaning faoliyatini rasmiy manbalar orqali shaffof yoritamiz va natijalarni tasdiqlangan ma\'lumotlar bilan taqdim etamiz.',
+
+'servicesPage.services.consult.title': 'Professional maslahat',
+'servicesPage.services.consult.desc': 'Nomzodlarni baholaymiz va chet elda ishga joylashish bo\'yicha mutaxassis tavsiyalarini beramiz.',
+
+'servicesPage.services.fairs.title': 'Saralash turlari va tanlov jarayonlari',
+'servicesPage.services.fairs.desc': 'Amaliy imtihonlar, onlayn suhbatlar, kasbiy testlar va malaka baholash tadbirlarini tashkil qilamiz.',
+
+'servicesPage.services.docs.title': 'Hujjatlar va yuridik qo\'llab-quvvatlash',
+'servicesPage.services.docs.desc': 'Shartnoma, ariza, anketalar va vizaga oid rasmiy hujjatlarni tayyorlashda to\'liq hamroh bo\'lamiz.',
+
+'servicesPage.services.adapt.title': 'Moslashuv dasturlari',
+'servicesPage.services.adapt.desc': 'Nomzodlarni yangi mehnat muhiti uchun tayyorlaymiz: intizom, xavfsizlik va mehnat madaniyatini o\'rgatamiz.',
+
+'servicesPage.services.russian.title': 'Til bo\'yicha tayyorgarlik',
+'servicesPage.services.russian.desc': 'Suhbat va ish jarayonida samarali muloqot uchun rus tili bo\'yicha tayyorlov mashg\'ulotlarini o\'tkazamiz.',
+
+'servicesPage.services.tickets.title': 'Safarni tashkil etish va logistika',
+'servicesPage.services.tickets.desc': 'Parvoz, transfer va joylashtirishni tashkil qilib, yo\'lovchi hujjatlarini rasmiylashtirishda yordam beramiz.',
+
+
 
     // Mission
     'mission.title': 'Bizning missiyamiz',
@@ -380,6 +464,34 @@ const translations: Translations = {
     'about.advantage3.desc': 'Barcha hujjatlar va shartnomalar qonuniy',
     'about.advantage4': 'Turli davlatlarda 200 dan ortiq nomzod ishga joylashtirilgan',
     'about.advantage4.desc': 'Biz arizadan ish joylashgunga qadar nomzodlarga yordam beramiz',
+
+    // ServicesPage → video block
+"servicesPage.video.title": "Nomzodlarni qo\'llab-quvvatlash",
+"servicesPage.video.subtitle": "Safar va ishga joylashishning har bir bosqichida yonimizdamiz",
+
+
+// About → video block
+'about.video.title': 'Mehnat yarmarkasidagi ishtirokimiz',
+'about.video.subtitle': 'Kompaniyamiz rasmiy bandlik dasturlari va tadbirlarida ochiq ishtirok etadi.',
+
+"servicesPage.videoBlock.title": "Biz amalda qanday ishlaymiz",
+"servicesPage.videoBlock.subtitle": "Saralash va kuzatish jarayonimizdan lavhalar",
+
+'about.values.title': 'Bizning qadriyatlarimiz',
+
+'about.values.item1.title': 'Shaffoflik',
+'about.values.item1.desc': 'Vakansiyalar, ish shartlari va ish beruvchilar haqida aniq va ishonchli ma\'lumot beramiz. Ish jarayoni ochiq va halol olib boriladi.',
+
+'about.values.item2.title': 'Mas\'uliyat',
+'about.values.item2.desc': 'Nomzodlar va hamkorlar oldidagi majburiyatlarimizni to\'liq bajarishga intilamiz.',
+
+'about.values.item3.title': 'Qo\'llab-quvvatlash',
+'about.values.item3.desc': 'Nomzodlarni dastlabki maslahatdan tortib to chet elda ish boshlashigacha hamroh bo\'lamiz.',
+
+'about.values.item4.title': 'Ishonchlilik',
+'about.values.item4.desc': 'Faqat tekshirilgan ish beruvchilar bilan ishlaymiz va qonuniylikka qat\'iy amal qilamiz.',
+
+
 
     // Legal Information
     'about.legal.tin': 'STIR',
@@ -514,48 +626,9 @@ const translations: Translations = {
     'jobs.duration.24months': '24 oy',
     'jobs.duration.36months': '36 oy',
 
-    // How We Work
-    'howWeWork.title': 'Qanday ishlaymiz',
-    'howWeWork.subtitle': 'Xorijda ishga joylashishning oddiy va tushunarli jarayoni',
-    'howWeWork.goalsTitle': 'Bizning asosiy maqsadlarimiz:',
-    'howWeWork.goal1': 'Kandidatlar uchun ish topishga yordam berish, ular bilan bir xil tajribalarga ega bo\'lishi kerak',
-    'howWeWork.goal2': 'Dokumentlar tayyorlash va D kategoriyasidagi mehnat vizasini olishga yordam berish',
-    'howWeWork.goal3': 'Xorijga chiqish uchun ishchilarga adaptatsiya kurslarini tayyorlash',
-    'howWeWork.goal4': 'Faqat rasmiy qo\'llab-quvvatlash bilan ishlaymiz',
-    'howWeWork.goal5': 'Rossiyalik partnerlar bilan birga rasmiy tillar kurslari va tayyorgarlik dasturlarini tayyorladik',
-    'howWeWork.step1': 'Maslahat',
-    'howWeWork.step1desc': 'Bepul maslahat va vakansiya tanlash',
-    'howWeWork.step1.detail1': 'Telefon yoki ofisda bepul maslahat',
-    'howWeWork.step1.detail2': 'Sizning ko\'nikmalaringiz va tajribangizni tahlil qilish',
-    'howWeWork.step1.detail3': 'Mos vakansiyalarni tanlash',
-    'howWeWork.step1.detail4': 'Ish shartlari haqida to\'liq ma\'lumot',
-    'howWeWork.step2': 'Hujjatlar',
-    'howWeWork.step2desc': 'Barcha kerakli hujjatlarni tayyorlash va rasmiylashtrish',
-    'howWeWork.step2.detail1': 'Kerakli hujjatlarni yig\'ish',
-    'howWeWork.step2.detail2': 'Tarjimа va notarial tasdiqlash',
-    'howWeWork.step2.detail3': 'Ish vizasi uchun hujjatlarni topshirish',
-    'howWeWork.step2.detail4': 'Tibbiy ma\'lumotnomalarni rasmiylashtirish',
-    'howWeWork.step3': 'Viza',
-    'howWeWork.step3desc': 'Ish vizasini olish',
-    'howWeWork.step3.detail1': 'Elchixonaga tayyorgarlik',
-    'howWeWork.step3.detail2': 'Suhbatda hamrohlik qilish',
-    'howWeWork.step3.detail3': 'Ish vizasini olish',
-    'howWeWork.step3.detail4': 'Mehnat shartnomasini rasmiylashtirish',
-    'howWeWork.step4': 'Jo\'nash',
-    'howWeWork.step4desc': 'Safar tashkil qilish va belgilangan mamlakatda kutib olish',
-    'howWeWork.step4.detail1': 'Aviachiptalarni olishda yordam',
-    'howWeWork.step4.detail2': 'Yetib kelishda kutib olish',
-    'howWeWork.step4.detail3': 'Yashash joyiga hamrohlik',
-    'howWeWork.step4.detail4': 'Moslashishga yordam',
-    'howWeWork.timeline': 'Qayta rasmiylash muddatlari',
-    'howWeWork.timeline.weeks': 'hafta',
-    'howWeWork.timeline.weeksAlt': 'hafta',
-    'howWeWork.timeline.months': 'oy',
-    'howWeWork.timeline.docs': 'Hujjatlar tayyorlash',
-    'howWeWork.timeline.visa': 'Viza olish',
-    'howWeWork.timeline.total': 'Jo\'nashgacha to\'liq tsikl',
-    'howWeWork.ready': 'Boshlashga tayyormisiz?',
-    'howWeWork.ready.text': 'Bepul maslahat uchun yoziling va xorijda ishlash uchun birinchi qadamni qo\'ying',
+// Video Title
+'jobs.video.title': 'Onlayn suhbat: Isroilda ishga joylashish jarayoni',
+
 
     // Contact
     'contact.title': 'Aloqa',
@@ -603,11 +676,20 @@ const translations: Translations = {
     'application.form.error.title': 'Yuborishda xatolik',
     'application.form.error.message': 'Iltimos, keyinroq urinib ko\'ring yoki telefon orqali bog\'laning',
 
+    // Apply Modal
+    'modal.apply.title': 'Ariza topshirish',
+    'modal.apply.name': 'Ism',
+    'modal.apply.phone': 'Telefon',
+    'modal.apply.namePlaceholder': 'Ismingiz',
+    'modal.apply.phonePlaceholder': '+998 XX XXX XX XX',
+    'modal.apply.submit': 'Yuborish',
+    'modal.apply.cancel': 'Bekor qilish',
+
     // Footer
     'footer.description': 'Ishga joylashishda ishonchli hamkor — sizning xorijdagi qonuniy ish yo\'lingiz.',
     'footer.contacts': 'Aloqa',
     'footer.address': 'Toshkent shahri, Buyuk Ipak Yo\'li dahasi, 32-uy, 3-xonadon, C-1',
-    'footer.rights': '© 2024 HORIZON WORK. Barcha huquqlar himoyalangan.',
+    'footer.rights': 'Barcha huquqlar himoyalangan.',
     'footer.quickLinks': 'Tezkor havolalar',
 
     // CTA
@@ -616,7 +698,7 @@ const translations: Translations = {
 
     // Meta
     'meta.title': 'HORIZON WORK - Xorijda rasmiy ishga joylashish',
-    'meta.description': 'Xorijda qonuniy ishga joylashish. 5 yildan ortiq tajribaga ega litsenziyalangan agentlik.'
+    'meta.description': 'Xorijda qonuniy ishga joylashish. 5 yildan ortiq tajribaga ega litsenziyalangan agentlik.',
   },
   en: {
 // Navigation
@@ -635,6 +717,8 @@ const translations: Translations = {
     'hero.welcome': 'Welcome!',
     'hero.cta': 'Find a Job',
     'hero.consultation': 'Free Consultation',
+
+   
 
     // Services
     'services.title': 'Our Services',
@@ -703,6 +787,21 @@ const translations: Translations = {
     'about.license.status': 'Status',
     'about.license.active': 'Active',
 
+    'about.values.title': 'Our Values',
+
+'about.values.item1.title': 'Transparency',
+'about.values.item1.desc': 'We provide clear and reliable information about jobs, conditions, and employers. All processes are open and honest.',
+
+'about.values.item2.title': 'Responsibility',
+'about.values.item2.desc': 'We fulfill our commitments to candidates and partners at every stage of cooperation.',
+
+'about.values.item3.title': 'Support',
+'about.values.item3.desc': 'We support candidates from the first consultation to official employment abroad.',
+
+'about.values.item4.title': 'Reliability',
+'about.values.item4.desc': 'We work only with verified employers and strictly follow legal requirements.',
+
+
     // QR Code
     'about.license.qr': 'Scan the QR code to verify the license on the license.gov.uz portal',
 
@@ -715,6 +814,8 @@ const translations: Translations = {
     'jobs.employmentSphere3': 'Restaurant and hotel business',
     'jobs.employmentSphere4': 'Trade and delivery services',
     'jobs.whoWeSeek': 'Who we are looking for?',
+
+
 
     // Job Categories
     'jobs.category1.title': 'Technical Specialists',
@@ -814,48 +915,34 @@ const translations: Translations = {
     'jobs.duration.24months': '24 months',
     'jobs.duration.36months': '36 months',
 
-    // How We Work
-    'howWeWork.title': 'How We Work',
-    'howWeWork.subtitle': 'Simple and clear employment process abroad',
-    'howWeWork.goalsTitle': 'Our main goals:',
-    'howWeWork.goal1': 'Helping candidates find jobs matching their knowledge, skills, and experience',
-    'howWeWork.goal2': 'Assisting with document preparation and obtaining D-category work visa',
-    'howWeWork.goal3': 'Organizing adaptation courses for departing workers',
-    'howWeWork.goal4': 'Working exclusively with officially registered employers',
-    'howWeWork.goal5': 'Jointly developed official language courses and preparatory programs with Russian partners',
-    'howWeWork.step1': 'Consultation',
-    'howWeWork.step1desc': 'Free consultation and job selection',
-    'howWeWork.step1.detail1': 'Free consultation by phone or in office',
-    'howWeWork.step1.detail2': 'Analysis of your skills and experience',
-    'howWeWork.step1.detail3': 'Selection of suitable vacancies',
-    'howWeWork.step1.detail4': 'Complete information about working conditions',
-    'howWeWork.step2': 'Documents',
-    'howWeWork.step2desc': 'Preparation and processing of all necessary documents',
-    'howWeWork.step2.detail1': 'Collection of necessary documents',
-    'howWeWork.step2.detail2': 'Translation and notarization',
-    'howWeWork.step2.detail3': 'Submission of documents for work visa',
-    'howWeWork.step2.detail4': 'Medical certificate processing',
-    'howWeWork.step3': 'Visa',
-    'howWeWork.step3desc': 'Obtaining a work visa',
-    'howWeWork.step3.detail1': 'Preparation for embassy interview',
-    'howWeWork.step3.detail2': 'Interview accompaniment',
-    'howWeWork.step3.detail3': 'Obtaining a work visa',
-    'howWeWork.step3.detail4': 'Employment contract processing',
-    'howWeWork.step4': 'Departure',
-    'howWeWork.step4desc': 'Travel organization and meeting in destination country',
-    'howWeWork.step4.detail1': 'Assistance in purchasing airline tickets',
-    'howWeWork.step4.detail2': 'Meeting at arrival airport',
-    'howWeWork.step4.detail3': 'Accompaniment to accommodation',
-    'howWeWork.step4.detail4': 'Assistance in adapting to new place',
-    'howWeWork.timeline': 'Processing Timeline',
-    'howWeWork.timeline.weeks': 'weeks',
-    'howWeWork.timeline.weeksAlt': 'weeks',
-    'howWeWork.timeline.months': 'months',
-    'howWeWork.timeline.docs': 'Document preparation',
-    'howWeWork.timeline.visa': 'Visa processing',
-    'howWeWork.timeline.total': 'Full cycle before departure',
-    'howWeWork.ready': 'Ready to start?',
-    'howWeWork.ready.text': 'Sign up for a free consultation and we will help you take the first step towards working abroad',
+     // Video title:
+'jobs.video.title': 'Online interview: the process of getting a job in Israel',
+
+    // Services Page (Our Services & Client Activity)
+'servicesPage.title': 'Our Services & Client Work',
+'servicesPage.intro': 'We provide professional support at every stage of overseas employment.',
+
+'servicesPage.services.social.title': 'Information Support and Reputation Management',
+'servicesPage.services.social.desc': 'We ensure transparency through official communication channels and verified activity reports.',
+
+'servicesPage.services.consult.title': 'Professional Consultation',
+'servicesPage.services.consult.desc': 'We assess candidates and provide expert recommendations for employment abroad.',
+
+'servicesPage.services.fairs.title': 'Selection Stages and Evaluation Events',
+'servicesPage.services.fairs.desc': 'We organize practical exams, online interviews, skill assessments, and professional testing.',
+
+'servicesPage.services.docs.title': 'Legal and Documentation Support',
+'servicesPage.services.docs.desc': 'We prepare the full package of documents: contracts, applications, agreements, permits, and visa papers.',
+
+'servicesPage.services.adapt.title': 'Adaptation Programs',
+'servicesPage.services.adapt.desc': 'We help candidates adapt to a new work environment: discipline, safety, and corporate culture training.',
+
+'servicesPage.services.russian.title': 'Language Training',
+'servicesPage.services.russian.desc': 'We provide Russian language preparation for interviews and professional communication.',
+
+'servicesPage.services.tickets.title': 'Travel and Logistics Support',
+'servicesPage.services.tickets.desc': 'We organize flights, transfers, accommodation arrangements, and travel coordination.',
+
 
     // Contact
     'contact.title': 'Contact',
@@ -903,11 +990,33 @@ const translations: Translations = {
     'application.form.error.title': 'Sending error',
     'application.form.error.message': 'Please try again later or contact us by phone',
 
+    // Apply Modal
+    'modal.apply.title': 'Apply',
+    'modal.apply.name': 'Name',
+    'modal.apply.phone': 'Phone',
+    'modal.apply.namePlaceholder': 'Your name',
+    'modal.apply.phonePlaceholder': '+998 XX XXX XX XX',
+    'modal.apply.submit': 'Submit',
+    'modal.apply.cancel': 'Cancel',
+
+    // ServicesPage → video block
+"servicesPage.video2.title": "Candidate Support",
+"servicesPage.video2.subtitle": "We stay with candidates through every step of departure and employment",
+
+
+// About → video block
+'about.video.title': 'Participation in Job Fair',
+'about.video.subtitle': 'Our company openly participates in official employment programs and events.',
+
+"servicesPage.videoBlock.title": "How We Work in Reality",
+"servicesPage.videoBlock.subtitle": "Real selection and candidate support process",
+
+
     // Footer
     'footer.description': 'Your reliable partner in finding legal employment abroad.',
     'footer.contacts': 'Contact',
     'footer.address': 'Tashkent City, Buyuk Ipak Yuli District, House 32, Apartment 3, C-1',
-    'footer.rights': '© 2024 HORIZON WORK. All rights reserved.',
+    'footer.rights': 'All rights reserved.',
     'footer.quickLinks': 'Quick Links',
 
     // CTA
@@ -916,8 +1025,8 @@ const translations: Translations = {
 
     // Meta
     'meta.title': 'HORIZON WORK - Official Employment Abroad',
-    'meta.description': 'Legal employment abroad. Licensed agency with over 5 years of experience.'
-  }
+    'meta.description': 'Legal employment abroad. Licensed agency with over 5 years of experience.',
+  },
 };
 
 export function LanguageProvider({ children }: {children: React.ReactNode;}) {
