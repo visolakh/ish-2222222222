@@ -24,21 +24,25 @@ export default function AboutPage() {
     <div className="min-h-screen">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="pt-32 pb-12 px-4 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#000000] to-[#1a1a1a] pointer-events-none" style={{ zIndex: -1 }} />
-        
-        <div className="max-w-[1200px] mx-auto relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#000000] mb-8 leading-snug">
-              {t('about.title')}
-            </h1>
-            <p className="text-lg sm:text-xl text-white/80">
-              {t('about.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+     {/* Hero Section */}
+<section className="pt-32 pb-12 px-4 relative">
+  <div
+    className="absolute inset-0 bg-gradient-to-r from-[#000000] to-[#1a1a1a] pointer-events-none"
+    style={{ zIndex: -1 }}
+  />
+
+  <div className="max-w-[1200px] mx-auto relative z-10">
+    <div className="max-w-3xl mx-auto text-center">
+      <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-8 leading-snug">
+        {t('about.title')}
+      </h1>
+      <p className="text-lg sm:text-xl text-white/80">
+        {t('about.subtitle')}
+      </p>
+    </div>
+  </div>
+</section>
+
 
       {/* Values Section */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-white to-gray-50">
