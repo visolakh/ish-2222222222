@@ -237,7 +237,7 @@ export default function AboutPage() {
  {/* Video block */}
 <section className="px-4 pb-20">
   <div className="max-w-[1280px] mx-auto text-center">
-    <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#000000] mb-8 leading-snug">
+    <h2 className="text-base sm:text-lg md:text-xl font-semibold text-[#000000] mb-6 leading-snug tracking-wide">
       {t("about.video.subtitle")}
     </h2>
 
