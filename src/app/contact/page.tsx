@@ -238,26 +238,25 @@ export default function ContactPage() {
 
             {/* Map */}
             <div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#000000] mb-4 sm:mb-6">
-                {t('location.title')}
-              </h2>
-              <Card className="overflow-hidden h-[400px] sm:h-[500px] border-[#FFD347]/30">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d802.9947925961303!2d69.28729075878341!3d41.311418683735454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDE4JzQwLjAiTiA2OcKwMTcnMTcuMSJF!5e0!3m2!1sen!2s!4v1760163001200!5m2!1sen!2s"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Location Map"
-                  className="pointer-events-auto"
-                ></iframe>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
+  <h2 className="text-2xl sm:text-3xl font-bold text-[#000000] mb-4 sm:mb-6">
+    {t('location.title')}
+  </h2>
+
+  <Card className="overflow-hidden h-[400px] sm:h-[500px] border-[#FFD347]/30">
+    <div className="w-full h-full">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d802.9947925961303!2d69.28729075878341!3d41.311418683735454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDE4JzQwLjAiTiA2OcKwMTcnMTcuMSJF!5e0!3m2!1sen!2s!4v1760163001200!5m2!1sen!2s"
+        className="w-full h-full"
+        style={{ border: 0 }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Location Map"
+      ></iframe>
+    </div>
+  </Card>
+</div>
+
 
       {/* Additional Info */}
       <section className="py-8 sm:py-12 bg-gradient-to-br from-[#FFF8E7] to-white">
