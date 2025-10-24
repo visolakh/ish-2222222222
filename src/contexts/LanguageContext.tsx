@@ -164,6 +164,62 @@ const translations: Translations = {
     'jobs.employmentSphere4': 'Торговля и службы доставки',
     'jobs.whoWeSeek': 'Кого мы ищем?',
 
+        // Job Categories
+    'jobs.category1.title': 'Технические специалисты',
+    'jobs.category1.job1': 'Сварщики',
+    'jobs.category1.job2': 'Операторы',
+    'jobs.category1.job3': 'Слесари',
+    'jobs.category1.job4': 'Инженеры',
+    'jobs.category1.job5': 'Электрики',
+    'jobs.category1.job6': 'Монтажники различных направлений',
+
+    'jobs.category2.title': 'Сервисный персонал',
+    'jobs.category2.job1': 'Горничные',
+    'jobs.category2.job2': 'Помощники поваров',
+    'jobs.category2.job3': 'Грузчики',
+    'jobs.category2.job4': 'Сотрудники отелей и ресторанов',
+    'jobs.category2.job5': 'Клининговые сотрудники',
+
+    'jobs.category3.title': 'Строительные специалисты',
+    'jobs.category3.job1': 'Арматурщики',
+    'jobs.category3.job2': 'Опалубщики',
+    'jobs.category3.job3': 'Мастера по гипсокартону',
+    'jobs.category3.job4': 'Маляры',
+    'jobs.category3.job5': 'Штукатуры',
+    'jobs.category3.job6': 'Фасадчики и другие профессии в строительной сфере',
+
+    'jobs.category4.title': 'Торговая сфера',
+    'jobs.category4.job1': 'Курьер-доставщик',
+    'jobs.category4.job2': 'Сотрудники супермаркетов',
+    'jobs.category4.job3': 'Сотрудники складов',
+
+    'jobs.category5.title': 'Водители',
+    'jobs.category5.job1': 'Водители грузовиков',
+    'jobs.category5.job2': 'Водители самосвалов',
+    'jobs.category5.job3': 'Водители бетономешалок',
+    'jobs.category5.job4': 'Водители тяжёлой техники',
+    'jobs.category5.job5': 'Водители вилочных погрузчиков',
+
+    'jobs.filter': 'Фильтр по странам',
+    'jobs.all': 'Все страны',
+
+    // Jobs country cards
+    'jobs.israel': 'Израиль',
+    'jobs.israel.desc': 'Работа в уходе, медицине и сельском хозяйстве',
+    'jobs.hungary': 'Венгрия',
+    'jobs.hungary.desc': 'Строительные компании, промышленные предприятия',
+    'jobs.bulgaria': 'Болгария',
+    'jobs.bulgaria.desc': 'Ресторанный и гостиничный бизнес, торговля',
+    'jobs.czechia': 'Чехия',
+    'jobs.czechia.desc': 'Производство, строительство, промышленность',
+    'jobs.russia': 'Россия',
+    'jobs.russia.desc': 'Работа в производстве, строительстве и сервисе',
+    'jobs.croatia': 'Хорватия',
+    'jobs.croatia.desc': 'Туризм, гостиничный бизнес, сезонная работа',
+    'jobs.apply': 'Подать заявку',
+    'jobs.salary': 'Заработная плата',
+    'jobs.duration': 'Продолжительность',
+
     // Latest Vacancies
     'jobs.latest.title': 'Актуальные вакансии',
     'jobs.latest.russia.title': 'Россия',
