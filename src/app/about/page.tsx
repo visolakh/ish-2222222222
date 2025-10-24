@@ -234,24 +234,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Video block */}
-      <section className="px-4 pb-20">
-        <div className="max-w-[1280px] mx-auto text-center">
-          <p className="text-black/70 max-w-3xl mx-auto mb-8">
-            {t("about.video.subtitle")}
-          </p>
+ {/* Video block */}
+<section className="px-4 pb-20">
+  <div className="max-w-[1280px] mx-auto text-center">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#000000] mb-8 leading-snug">
+      {t("about.video.subtitle")}
+    </h2>
 
-          <div className="w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-lg border border-black/10">
-            <iframe
-              className="w-full aspect-video"
-              src="https://www.youtube.com/embed/bTn8BenfZq0"
-              title="Job Fair Participation"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      </section>
+    <div className="w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-lg border border-black/10">
+      <iframe
+        className="w-full aspect-video"
+        src="https://www.youtube.com/embed/bTn8BenfZq0"
+        title="Job Fair Participation"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    </div>
+  </div>
+</section>
+
 
       <Footer />
     </div>
