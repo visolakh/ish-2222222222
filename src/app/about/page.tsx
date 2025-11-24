@@ -1,12 +1,13 @@
 "use client";
 
-import React from 'react';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import Image from 'next/image';
+import React, { useState, useRef, useEffect } from "react";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+// renamed import to avoid collision with global Image constructor
+import NextImage from "next/image";
 import {
   Eye,
   Award,
@@ -15,248 +16,314 @@ import {
   Shield,
   CheckCircle,
   FileCheck,
-} from 'lucide-react';
+  Images,
+  X,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
 export default function AboutPage() {
   const { t } = useLanguage();
 
+  const gallery = [
+    {
+      thumb: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/IMG_0259-1761484969341.JPG",
+      full: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/IMG_0259-1761484969341.JPG",
+      alt: "Gallery 1",
+    },
+    {
+      thumb: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/photo_2025-10-26-17.20.55-1761485002912.jpeg",
+      full: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/photo_2025-10-26-17.20.55-1761485002912.jpeg",
+      alt: "Gallery 2",
+    },
+    {
+      thumb: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/photo_2025-10-26-17.21.06-1761485008002.jpeg",
+      full: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/photo_2025-10-26-17.21.06-1761485008002.jpeg",
+      alt: "Gallery 3",
+    },
+    {
+      thumb: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/IMG_0258-1761485014943.JPG",
+      full: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/IMG_0258-1761485014943.JPG",
+      alt: "Gallery 4",
+    },
+    {
+      thumb: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/IMG_0109-1761485020447.JPG",
+      full: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/IMG_0109-1761485020447.JPG",
+      alt: "Gallery 5",
+    },
+  ];
+
+  const [index, setIndex] = useState<number | null>(null);
+  const imgRef = useRef<HTMLImageElement | null>(null);
+
+  const openAt = (i: number) => {
+    setIndex(i);
+    document.body.style.overflow = "hidden";
+  };
+
+  const close = () => {
+    setIndex(null);
+    document.body.style.overflow = "";
+  };
+
+  const showNext = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (index === null) return;
+    setIndex((prev) => ((prev ?? 0) + 1) % gallery.length);
+  };
+
+  const showPrev = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (index === null) return;
+    setIndex((prev) => ((prev ?? 0) - 1 + gallery.length) % gallery.length);
+  };
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (index === null) return;
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowRight") setIndex((prev) => ((prev ?? 0) + 1) % gallery.length);
+      if (e.key === "ArrowLeft") setIndex((prev) => ((prev ?? 0) - 1 + gallery.length) % gallery.length);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [index]);
+
+  // swipe support
+  useEffect(() => {
+    if (!imgRef.current) return;
+    const img = imgRef.current;
+    let startX = 0;
+    let dist = 0;
+    const threshold = 50;
+
+    const onTouchStart = (ev: TouchEvent) => {
+      startX = ev.touches[0].clientX;
+      dist = 0;
+    };
+    const onTouchMove = (ev: TouchEvent) => {
+      dist = ev.touches[0].clientX - startX;
+    };
+    const onTouchEnd = () => {
+      if (dist > threshold) showPrev();
+      else if (dist < -threshold) showNext();
+    };
+
+    img.addEventListener("touchstart", onTouchStart, { passive: true });
+    img.addEventListener("touchmove", onTouchMove, { passive: true });
+    img.addEventListener("touchend", onTouchEnd);
+
+    return () => {
+      img.removeEventListener("touchstart", onTouchStart);
+      img.removeEventListener("touchmove", onTouchMove);
+      img.removeEventListener("touchend", onTouchEnd);
+    };
+  }, [index]);
+
+  // preload neighbors using global Image constructor
+  useEffect(() => {
+    if (index === null) return;
+    const next = (index + 1) % gallery.length;
+    const prev = (index - 1 + gallery.length) % gallery.length;
+    const p1 = new window.Image();
+    p1.src = gallery[next].full;
+    const p2 = new window.Image();
+    p2.src = gallery[prev].full;
+  }, [index]);
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
       <Navigation />
-      
-     {/* Hero Section */}
-<section className="pt-32 pb-12 px-4 relative">
-  <div
-    className="absolute inset-0 bg-gradient-to-r from-[#000000] to-[#1a1a1a] pointer-events-none"
-    style={{ zIndex: -1 }}
-  />
 
-  <div className="max-w-[1200px] mx-auto relative z-10">
-    <div className="max-w-3xl mx-auto text-center">
-      <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-8 leading-snug">
-        {t('about.title')}
-      </h1>
-      <p className="text-lg sm:text-xl text-white/80">
-        {t('about.subtitle')}
-      </p>
-    </div>
-  </div>
-</section>
+      {/* LIGHTBOX */}
+      {index !== null && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          onClick={close}
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 p-4"
+        >
+          <button
+            onClick={(e) => showPrev(e)}
+            aria-label="Previous"
+            className="absolute left-4 sm:left-8 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white rounded-full w-12 h-12 flex items-center justify-center z-[10001]"
+          >
+            <ChevronLeft className="w-6 h-6 text-black" />
+          </button>
 
+          <button
+            onClick={(e) => showNext(e)}
+            aria-label="Next"
+            className="absolute right-4 sm:right-8 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white rounded-full w-12 h-12 flex items-center justify-center z-[10001]"
+          >
+            <ChevronRight className="w-6 h-6 text-black" />
+          </button>
 
-      {/* Values Section */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              close();
+            }}
+            aria-label="Close"
+            className="absolute top-4 right-4 bg-white/90 hover:bg-white rounded-full w-10 h-10 flex items-center justify-center z-[10002]"
+          >
+            <X className="w-5 h-5 text-black" />
+          </button>
+
+          <div
+            className="max-w-[95vw] max-h-[92vh] flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              ref={imgRef}
+              src={gallery[index].full}
+              alt={gallery[index].alt || `Image ${index + 1}`}
+              className="max-w-full max-h-full rounded-lg shadow-2xl"
+              style={{ objectFit: "contain", imageRendering: "auto" }}
+            />
+          </div>
+
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white text-sm bg-black/40 px-3 py-1 rounded-md z-[10001]">
+            {gallery[index].alt} · {index + 1}/{gallery.length}
+          </div>
+        </div>
+      )}
+
+      {/* Hero */}
+      <section className="pt-32 pb-12 px-4 relative">
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-[#000000] to-[#1a1a1a] pointer-events-none"
+          style={{ zIndex: -1 }}
+        />
+        <div className="max-w-[1200px] mx-auto relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-8 leading-snug">
+              {t("about.title")}
+            </h1>
+            <p className="text-lg sm:text-xl text-white/80">{t("about.subtitle")}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-[1200px] mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-[#000000] mb-4">
-              {t('about.values.title')}
+              {t("about.values.title")}
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Value 1 - Прозрачность */}
-            <Card className="border-2 border-[#FFD347]/30 hover:border-[#FF7A00] transition-all duration-300 hover:shadow-lg">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#FF7A00] to-[#FFB347] rounded-full flex items-center justify-center">
-                  <Eye className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-[#000000] mb-3">
-                  {t('about.values.item1.title')}
-                </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {t('about.values.item1.desc')}
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Value 2 - Ответственность */}
-            <Card className="border-2 border-[#FFD347]/30 hover:border-[#FF7A00] transition-all duration-300 hover:shadow-lg">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#FF7A00] to-[#FFB347] rounded-full flex items-center justify-center">
-                  <Award className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-[#000000] mb-3">
-                  {t('about.values.item2.title')}
-                </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {t('about.values.item2.desc')}
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Value 3 - Поддержка */}
-            <Card className="border-2 border-[#FFD347]/30 hover:border-[#FF7A00] transition-all duration-300 hover:shadow-lg">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#FF7A00] to-[#FFB347] rounded-full flex items-center justify-center">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-[#000000] mb-3">
-                  {t('about.values.item3.title')}
-                </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {t('about.values.item3.desc')}
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Value 4 - Надежность */}
-            <Card className="border-2 border-[#FFD347]/30 hover:border-[#FF7A00] transition-all duration-300 hover:shadow-lg">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#FF7A00] to-[#FFB347] rounded-full flex items-center justify-center">
-                  <ShieldCheck className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-[#000000] mb-3">
-                  {t('about.values.item4.title')}
-                </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {t('about.values.item4.desc')}
-                </p>
-              </CardContent>
-            </Card>
+            {[
+              { icon: Eye, title: "item1" },
+              { icon: Award, title: "item2" },
+              { icon: Users, title: "item3" },
+              { icon: ShieldCheck, title: "item4" },
+            ].map((v, i) => {
+              const Icon = v.icon;
+              return (
+                <Card
+                  key={i}
+                  className="border-2 border-[#FFD347]/30 hover:border-[#FF7A00] transition-all duration-300 hover:shadow-lg"
+                >
+                  <CardContent className="p-6 text-center">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#FF7A00] to-[#FFB347] rounded-full flex items-center justify-center">
+                      <Icon className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-[#000000] mb-3">
+                      {t(`about.values.${v.title}.title`)}
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      {t(`about.values.${v.title}.desc`)}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* About Company Section - Plain Text */}
+      {/* About Company */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-[1200px] mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-[#000000] mb-6">
-                  {t('about.advantages.title')}
-                </h2>
-                
-                <ul className="space-y-4 text-base sm:text-lg text-gray-700">
-                  <li className="flex items-start gap-3">
-                    <span className="text-[#FF7A00] mt-1 flex-shrink-0 font-bold">✓</span>
-                    <span><strong>{t('about.advantage1')}</strong> — {t('about.advantage1.desc')}</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-[#FF7A00] mt-1 flex-shrink-0 font-bold">✓</span>
-                    <span><strong>{t('about.advantage2')}</strong> — {t('about.advantage2.desc')}</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-[#FF7A00] mt-1 flex-shrink-0 font-bold">✓</span>
-                    <span><strong>{t('about.advantage3')}</strong> — {t('about.advantage3.desc')}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#000000] mb-6">
+              {t("about.advantages.title")}
+            </h2>
+            <ul className="space-y-4 text-base sm:text-lg text-gray-700">
+              {[1, 2, 3].map((n) => (
+                <li key={n} className="flex items-start gap-3">
+                  <span className="text-[#FF7A00] mt-1 font-bold">✓</span>
+                  <span>
+                    <strong>{t(`about.advantage${n}`)}</strong> — {t(`about.advantage${n}.desc`)}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* Mehnat.uz Integration Section */}
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8 sm:mb-12">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <Shield className="w-8 h-8 text-[#FF7A00]" />
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#000000] tracking-tight">
-                  {t('mehnat.title')}
-                </h2>
-              </div>
-              <p className="text-base sm:text-lg text-[#000000]/70 font-light leading-relaxed">
-                {t('mehnat.description')}
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-[#FFF8E7] to-white border-2 border-[#FFD347]/30 rounded-xl p-6 sm:p-8">
-              <h3 className="text-xl sm:text-2xl font-semibold text-[#000000] mb-6">
-                {t('mehnat.benefits')}
-              </h3>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-[#FF7A00] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#000000]/80 leading-relaxed">{t('mehnat.benefit1')}</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-[#FF7A00] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#000000]/80 leading-relaxed">{t('mehnat.benefit2')}</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-[#FF7A00] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#000000]/80 leading-relaxed">{t('mehnat.benefit3')}</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-[#FF7A00] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#000000]/80 leading-relaxed">{t('mehnat.benefit4')}</span>
-                </li>
-              </ul>
-              
-              <div className="mt-8 text-center">
-                <a
-                  href="https://mehnat.uz"
-                  target="_blank"
-                  rel="noopener noreferrer">
-
-                  <Button className="bg-gradient-to-r from-[#FF7A00] to-[#FFB347] hover:from-[#FF7A00]/90 hover:to-[#FFB347]/90 text-white rounded-lg transition-all duration-300 font-medium text-sm sm:text-base px-6 py-5 border-none">
-                    {t('mehnat.button')}
-                  </Button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* License Section */}
+      {/* Gallery thumbnails */}
       <section className="py-16 sm:py-24 bg-gradient-to-br from-[#FFF8E7] to-white">
-        <div className="max-w-[1200px] mx-auto px-4">
-          <div className="text-center mb-8 sm:mb-12">
+        <div className="max-w-[1400px] mx-auto px-4">
+          <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <FileCheck className="w-8 h-8 text-[#FF7A00]" />
+              <Images className="w-8 h-8 text-[#FF7A00]" />
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#000000] tracking-tight">
-                {t('about.license')}
+                {t("about.gallery.title")}
               </h2>
             </div>
-            <p className="text-base sm:text-lg text-[#000000]/70 font-light leading-relaxed max-w-3xl mx-auto">
-              {t('about.license.official')}
-            </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <Card className="border-2 border-[#FFD347]/50 overflow-hidden">
-              <CardContent className="p-6 sm:p-8">
-                <div className="flex flex-col items-center">
-                  {/* License Image */}
-                  <div className="w-full max-w-2xl rounded-lg overflow-hidden border-2 border-[#FFD347]/30 shadow-lg">
-                    <Image
-                      src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/_page-0001-1760118394562.jpg"
-                      alt={t('about.license')}
-                      width={800}
-                      height={1131}
-                      className="w-full h-auto"
-                    />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+            {gallery.map((g, i) => (
+              <div
+                key={i}
+                onClick={() => openAt(i)}
+                className="relative overflow-hidden rounded-xl cursor-zoom-in hover:scale-105 transform transition"
+              >
+                <NextImage
+                  src={g.thumb}
+                  alt={g.alt}
+                  width={500}
+                  height={500}
+                  className="object-cover w-full h-48 sm:h-40 md:h-44"
+                  priority={i < 2}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
- {/* Video block */}
-<section className="px-4 pb-20">
-  <div className="max-w-[1280px] mx-auto text-center">
-    <h2 className="text-base sm:text-lg md:text-xl font-semibold text-[#000000] mb-6 leading-snug tracking-wide">
-      {t("about.video.subtitle")}
-    </h2>
+      {/* License */}
+      <section className="py-16 sm:py-24 bg-gradient-to-br from-[#FFF8E7] to-white">
+        <div className="max-w-[1200px] mx-auto px-4 text-center">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <FileCheck className="w-8 h-8 text-[#FF7A00]" />
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#000000] tracking-tight">
+              {t("about.license")}
+            </h2>
+          </div>
+          <p className="text-base sm:text-lg text-[#000000]/70 mb-8">{t("about.license.official")}</p>
 
-    <div className="w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-lg border border-black/10">
-      <iframe
-        className="w-full aspect-video"
-        src="https://www.youtube.com/embed/bTn8BenfZq0"
-        title="Job Fair Participation"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
-    </div>
-  </div>
-</section>
-
+          <div
+            className="max-w-2xl mx-auto border-2 border-[#FFD347]/30 rounded-xl overflow-hidden cursor-zoom-in hover:opacity-95"
+            onClick={() => openAt(0)}
+          >
+            <NextImage
+              src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/_page-0001-1760118394562.jpg"
+              alt={t("about.license")}
+              width={800}
+              height={1131}
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </div>
