@@ -12,11 +12,13 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+
 type Translations = Record<Language, Record<string, string>>;
+
 
 const translations: Translations = {
   ru: {
-    // Navigation
+        // Navigation
     'nav.home': 'Главная',
     'nav.about': 'О нас',
     'nav.jobs': 'Вакансии',
@@ -33,50 +35,85 @@ const translations: Translations = {
     'hero.cta': 'Подобрать вакансию',
     'hero.consultation': 'Бесплатная консультация',
 
-    // Services
+'about.values.title': 'Наши ценности',
+
+'about.values.item1.title': 'Прозрачность',
+'about.values.item1.desc': 'Открыто предоставляем информацию о вакансиях, условиях и работодателях. Работаем честно и официально.',
+
+'about.values.item2.title': 'Ответственность',
+'about.values.item2.desc': 'Выполняем обязательства перед кандидатами и партнёрами на каждом этапе сотрудничества.',
+
+'about.values.item3.title': 'Поддержка',
+'about.values.item3.desc': 'Сопровождаем кандидатов от консультации до полноценного трудоустройства за рубежом.',
+
+'about.values.item4.title': 'Надежность',
+'about.values.item4.desc': 'Работаем только с проверенными работодателями и партнёрами. Все процессы оформляются официально.',
+
+// Gallery Section
+    'about.gallery.title': 'Наша галерея',
+    
+    // Official Documents Section
+    'docs.title': 'Официальные соглашения и документы',
+    'docs.description': 'Данные соглашения регулируют сотрудничество в сфере трудоустройства граждан Республики Узбекистан в Государстве Израиль и определяют обязательства иностранного работодателя и частного агентства занятости.',
+    'docs.agreement1.title': 'Соглашение о сотрудничестве в сфере трудоустройства граждан Республики Узбекистан в Государстве Израиль (RU-ENG version)',
+    'docs.agreement2.title': 'Соглашение о сотрудничестве в сфере трудоустройства граждан Республики Узбекистан в Государстве Израиль (UZB version)',
+    'docs.download': 'Скачать соглашение (PDF)',
+
+      // Services
     'services.title': 'Наши услуги',
-    'services.subtitle': 'Полный комплекс поддержки для успешного трудоустройства за рубежом',
+'services.subtitle': 'Полный комплекс поддержки для успешного трудоустройства за рубежом',
 
-    'services.legal.title': 'Официальное трудоустройство',
-    'services.legal.desc': 'Оформление документов и рабочих виз в соответствии с законодательством',
+'services.legal.title': 'Официальное трудоустройство',
+'services.legal.desc': 'Оформление документов и рабочих виз в соответствии с законодательством',
 
-    'services.support.title': 'Сопровождение на всех этапах',
-    'services.support.desc': 'Помогаем кандидатам от подачи заявки до начала работы',
+'services.support.title': 'Сопровождение на всех этапах',
+'services.support.desc': 'Помогаем кандидатам от подачи заявки до начала работы',
 
-    'services.verified.title': 'Проверенные работодатели',
-    'services.verified.desc': 'Сотрудничаем только с проверенными и надёжными компаниями',
+'services.verified.title': 'Проверенные работодатели',
+'services.verified.desc': 'Сотрудничаем только с проверенными и надёжными компаниями',
 
-    'services.housing.title': 'Программы адаптации и подготовки',
-    'services.housing.desc': 'Организуем профессиональную подготовку и адаптацию сотрудников перед выездом за рубеж',
+'services.housing.title': 'Программы адаптации и подготовки',
+'services.housing.desc': 'Организуем профессиональную подготовку и адаптацию сотрудников перед выездом за рубеж',
+
 
     // Services (Наши услуги и активность клиентов)
     'servicesPage.title': 'Наши услуги и работа с клиентами',
-    'servicesPage.intro': 'Мы предоставляем профессиональную поддержку на каждом этапе трудоустройства за рубежом.',
+'servicesPage.intro': 'Мы предоставляем профессиональную поддержку на каждом этапе трудоустройства за рубежом.',
 
-    'servicesPage.services.social.title': 'Информационные медиа и отчётность',
-    'servicesPage.services.social.desc': 'Ведём прозрачную коммуникацию с клиентами через официальные социальные сети, публикуем реальные результаты и отчёты о проделанной работе.',
+'servicesPage.services.social.title': 'Информационные медиа и отчётность',
+'servicesPage.services.social.desc': 'Ведём прозрачную коммуникацию с клиентами через официальные социальные сети, публикуем реальные результаты и отчёты о проделанной работе.',
 
-    'servicesPage.services.consult.title': 'Профессиональные консультации',
-    'servicesPage.services.consult.desc': 'Проводим индивидуальные консультации, помогаем подобрать подходящую вакансию и даём честную оценку требований и условий работы за рубежом.',
+'servicesPage.services.consult.title': 'Профессиональные консультации',
+'servicesPage.services.consult.desc': 'Проводим индивидуальные консультации, помогаем подобрать подходящую вакансию и даём честную оценку требований и условий работы за рубежом.',
 
-    'servicesPage.services.fairs.title': 'Отборочные туры и ярмарки вакансий',
-    'servicesPage.services.fairs.desc': 'Организуем и участвуем в официальных отборочных мероприятиях, практических экзаменах и собеседованиях с зарубежными работодателями.',
+'servicesPage.services.fairs.title': 'Отборочные туры и ярмарки вакансий',
+'servicesPage.services.fairs.desc': 'Организуем и участвуем в официальных отборочных мероприятиях, практических экзаменах и собеседованиях с зарубежными работодателями.',
 
-    'servicesPage.services.docs.title': 'Оформление документов',
-    'servicesPage.services.docs.desc': 'Подготавливаем анкеты, резюме, трудовые договоры и весь пакет необходимых документов для легального трудоустройства.',
+'servicesPage.services.docs.title': 'Оформление документов',
+'servicesPage.services.docs.desc': 'Подготавливаем анкеты, резюме, трудовые договоры и весь пакет необходимых документов для легального трудоустройства.',
 
-    'servicesPage.services.adapt.title': 'Курсы адаптации и подготовки',
-    'servicesPage.services.adapt.desc': 'Готовим кандидатов к жизни и работе за границей: обучаем правилам безопасности, трудовой дисциплине и социальной адаптации.',
+'servicesPage.services.adapt.title': 'Курсы адаптации и подготовки',
+'servicesPage.services.adapt.desc': 'Готовим кандидатов к жизни и работе за границей: обучаем правилам безопасности, трудовой дисциплине и социальной адаптации.',
 
-    'servicesPage.services.russian.title': 'Курсы русского языка',
-    'servicesPage.services.russian.desc': 'Обучаем языку для прохождения собеседований, сдачи тестов и успешной коммуникации на рабочем месте.',
+'servicesPage.services.russian.title': 'Курсы русского языка',
+'servicesPage.services.russian.desc': 'Обучаем языку для прохождения собеседований, сдачи тестов и успешной коммуникации на рабочем месте.',
 
-    'servicesPage.services.tickets.title': 'Организация выезда',
-    'servicesPage.services.tickets.desc': 'Помогаем с перелётом, трансфером, бронированием и координацией поездки до места трудоустройства.',
+'servicesPage.services.tickets.title': 'Организация выезда',
+'servicesPage.services.tickets.desc': 'Помогаем с перелётом, трансфером, бронированием и координацией поездки до места трудоустройства.',
 
-    // Services → video block
-    "servicesPage.video2.title": "Сопровождение кандидатов",
-    "servicesPage.video2.subtitle": "Поддерживаем на каждом этапе выезда и трудоустройства",
+
+
+
+
+
+
+
+// Services → video block
+"servicesPage.video2.title": "Сопровождение кандидатов",
+"servicesPage.video2.subtitle": "Поддерживаем на каждом этапе выезда и трудоустройства",
+
+
+
 
     // Mission
     'mission.title': 'Наша миссия',
@@ -97,11 +134,12 @@ const translations: Translations = {
     'location.address': 'г. Ташкент, махалля Буюк Ипак Йўли, дом 32, квартира 3, Ц-1',
 
     // About → video block
-    'about.video.title': 'Участие в ярмарке вакансий',
-    'about.video.subtitle': 'Наша компания открыто участвует в государственных и региональных программах по трудоустройству.',
+'about.video.title': 'Участие в ярмарке вакансий',
+'about.video.subtitle': 'Наша компания открыто участвует в государственных и региональных программах по трудоустройству.',
 
-    "servicesPage.videoBlock.title": "Как мы работаем на практике",
-    "servicesPage.videoBlock.subtitle": "Реальный процесс отбора и сопровождения кандидатов",
+"servicesPage.videoBlock.title": "Как мы работаем на практике",
+"servicesPage.videoBlock.subtitle": "Реальный процесс отбора и сопровождения кандидатов",
+
 
     // About Page - Updated stats
     'about.title': 'О компании',
@@ -117,13 +155,13 @@ const translations: Translations = {
     'about.advantage3.desc': 'Все документы и контракты легальны',
     'about.advantage4': 'Более 200 трудоустроенных кандидатов в разных странах',
     'about.advantage4.desc': 'Мы помогаем кандидатам от подачи заявки до трудоустройства',
-
-    // Values Section (единственный набор — дубликат удалён)
+     
+    // Values Section
     'about.values.title': 'Наши ценности',
     'about.values.item1.title': 'Прозрачность',
     'about.values.item1.desc': 'Открыто предоставляем информацию о вакансиях, условиях и работодателях. Работаем честно и официально.',
     'about.values.item2.title': 'Ответственность',
-    'about.values.item2.desc': 'Отвечаем за каждый этап процесса и выполняем обязательства перед кандидатами и партнёрами.',
+    'about.values.item2.desc': 'Отвечаем за каждый этап процесса и выполняем обязательства перед кандидатами и партнерами.',
     'about.values.item3.title': 'Поддержка',
     'about.values.item3.desc': 'Сопровождаем кандидатов от консультации до полного трудоустройства за рубежом.',
     'about.values.item4.title': 'Надежность',
@@ -164,7 +202,10 @@ const translations: Translations = {
     'jobs.employmentSphere4': 'Торговля и службы доставки',
     'jobs.whoWeSeek': 'Кого мы ищем?',
 
-        // Job Categories
+
+    
+
+    // Job Categories
     'jobs.category1.title': 'Технические специалисты',
     'jobs.category1.job1': 'Сварщики',
     'jobs.category1.job2': 'Операторы',
@@ -257,11 +298,17 @@ const translations: Translations = {
     'jobs.latest.germany.title': 'Германия',
     'jobs.latest.germany.job1': 'Водители категории CE',
 
-    // Video Title
+    // Job Listings
+    'jobs.type.fulltime': 'Полная занятость',
+    'jobs.duration.12months': '12 месяцев',
+    'jobs.duration.18months': '18 месяцев',
+    'jobs.duration.24months': '24 месяца',
+    'jobs.duration.36months': '36 месяцев',
+
+// Video Title
     'jobs.video.title': 'Онлайн-собеседование: процесс оформления на работу в Израиль',
-    // (далее остальные ключи — я не трогал их, оставил как есть)
-    // ...
-    // Contact, application form, modal, footer, cta, meta и т.д.
+
+    // Contact
     'contact.title': 'Контакты',
     'contact.subtitle': 'Свяжитесь с нами любым удобным способом',
     'contact.address': 'Адрес',
@@ -291,6 +338,8 @@ const translations: Translations = {
     'contact.form.error': 'Ошибка отправки',
     'contact.form.error.text': 'Пожалуйста, попробуйте позже или свяжитесь с нами по телефону',
     'contact.form.sending': 'Отправка...',
+
+    // Application Form
     'application.form.title': 'Оставьте заявку, и мы свяжемся с вами',
     'application.form.fullName': 'ФИО',
     'application.form.fullName.placeholder': 'Введите ваше имя',
@@ -303,6 +352,8 @@ const translations: Translations = {
     'application.form.success.message': 'Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.',
     'application.form.error.title': 'Ошибка отправки',
     'application.form.error.message': 'Пожалуйста, попробуйте позже или свяжитесь с нами по телефону',
+
+    // Apply Modal
     'modal.apply.title': 'Подать заявку',
     'modal.apply.name': 'Имя',
     'modal.apply.phone': 'Телефон',
@@ -310,17 +361,23 @@ const translations: Translations = {
     'modal.apply.phonePlaceholder': '+998 XX XXX XX XX',
     'modal.apply.submit': 'Отправить',
     'modal.apply.cancel': 'Отменить',
+
+    // Footer
     'footer.description': 'Надёжный партнёр в поиске легальной работы за рубежом.',
     'footer.contacts': 'Контакты',
     'footer.address': 'г. Ташкент, махалля Буюк Ипак Йўли, дом 32, квартира 3, Ц-1',
     'footer.rights': 'Все права защищены.',
     'footer.quickLinks': 'Быстрые ссылки',
+
+    // CTA
     'cta.ready': 'Готовы начать новую жизнь за рубежом?',
     'cta.consultation': 'Получите бесплатную консультацию сегодня',
+
+    // Meta
     'meta.title': 'HORIZON WORK - Официальное трудоустройство за рубежом',
     'meta.description': 'Официальное трудоустройство за рубежом. Агентство с более чем 5-летним опытом.'
   },
-uz: {
+  uz: {
         // Navigation
     'nav.home': 'Bosh sahifa',
     'nav.about': 'Biz haqimizda',
@@ -580,8 +637,18 @@ uz: {
     'jobs.duration.24months': '24 oy',
     'jobs.duration.36months': '36 oy',
 
+      'about.gallery.title': 'Bizning Galereya',
+    
+    // Official Documents Section
+    'docs.title': 'Rasmiy kelishuvlar va hujjatlar',
+    'docs.description': 'Ushbu kelishuvlar O‘zbekiston Respublikasi fuqarolarini Isroil Davlatida ishga joylashtirish sohasidagi hamkorlikni tartibga soladi hamda xorijiy ish beruvchi va xususiy bandlik agentligining majburiyatlarini belgilaydi.',
+    'docs.agreement1.title': 'Isroil Davlatida O‘zbekiston Respublikasi fuqarolarini ishga joylashtirish sohasida hamkorlik to‘g‘risida KELISHUV (Rus-Ingliz versiyasi)',
+    'docs.agreement2.title': 'Isroil Davlatida O‘zbekiston Respublikasi fuqarolarini ishga joylashtirish sohasida hamkorlik to‘g\'risida KELISHUV (ikkinchi versiya)',
+    'docs.download': 'Shartnomani yuklab olish (PDF)',
+
+  
 // Video Title
-'jobs.video.title': 'Onlayn suhbat: Isroilda ishga joylashish jarayoni',
+    'jobs.video.title': 'Onlayn suhbat: Isroilda ishga joylashish jarayoni',
 
 
     // Contact
@@ -897,7 +964,16 @@ uz: {
 'servicesPage.services.tickets.title': 'Travel and Logistics Support',
 'servicesPage.services.tickets.desc': 'We organize flights, transfers, accommodation arrangements, and travel coordination.',
 
+'about.gallery.title': 'Our Gallery',
+    
+    // Official Documents Section
+    'docs.title': 'Official Agreements & Documents',
+    'docs.description': 'These agreements regulate cooperation in the employment of citizens of the Republic of Uzbekistan in the State of Israel and define the obligations of the foreign employer and the private employment agency.',
+    'docs.agreement1.title': 'Agreement on cooperation in the field of employment of citizens of the Republic of Uzbekistan in the State of Israel (Russian–English version)',
+    'docs.agreement2.title': 'Agreement on cooperation in the field of employment of citizens of the Republic of Uzbekistan in the State of Israel (second version)',
+    'docs.download': 'Download Agreement (PDF)',
 
+  
     // Contact
     'contact.title': 'Contact',
     'contact.subtitle': 'Contact us in any convenient way',
@@ -988,15 +1064,12 @@ export function LanguageProvider({ children }: {children: React.ReactNode;}) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // безопасное получение сохранённого языка
+    // ✅ Чуть безопаснее для TS
     const saved = localStorage.getItem('language') as Language | null;
     if (saved && (saved === 'ru' || saved === 'uz' || saved === 'en')) {
       setLanguage(saved);
     } else {
-      // безопасное и типобезопасное получение языка браузера — navigator.languages предпочтительный
-      const rawBrowserLang =
-        (navigator as any).languages?.[0] || navigator.language || "ru";
-      const browserLang = String(rawBrowserLang).toLowerCase();
+      const browserLang = navigator.language.toLowerCase();
       if (browserLang.startsWith('ru')) {
         setLanguage('ru');
       } else if (browserLang.startsWith('uz')) {
@@ -1016,8 +1089,9 @@ export function LanguageProvider({ children }: {children: React.ReactNode;}) {
     document.documentElement.lang = lang;
   };
 
+  // ✅ Безопасный индекс для TS
   const t = (key: string): string => {
-    const dict = translations[language] || {};
+    const dict = translations[language]; // тип: Record<string, string>
     return dict[key] ?? key;
   };
 
