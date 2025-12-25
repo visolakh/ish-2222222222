@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Globe, Users, Home, Shield, ArrowRight, FileCheck, MapPin } from 'lucide-react';
+import { CheckCircle, Globe, Users, Home, Shield, ArrowRight, FileCheck, MapPin, FileText } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ApplicationForm } from '@/components/ApplicationForm';
@@ -203,6 +203,73 @@ export default function HomePage() {
         </div>
       </section>
 
+       {/* Official Agreements & Documents Section */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-[1200px] mx-auto px-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#000000] mb-4 sm:mb-5 tracking-tight">
+              {t('docs.title')}
+            </h2>
+            <p className="text-base sm:text-lg text-[#000000]/70 font-light leading-relaxed max-w-3xl mx-auto">
+              {t('docs.description')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
+            {/* Agreement 1 */}
+            <Card className="border-[#FFD347]/30 hover:border-[#FF7A00] hover:shadow-lg transition-all duration-300 bg-white group flex flex-col justify-between">
+              <CardHeader className="pb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#FF7A00]/10 to-[#FFB347]/10 rounded-xl flex items-center justify-center mb-4 group-hover:from-[#FF7A00]/20 group-hover:to-[#FFB347]/20 transition-all duration-300">
+                  <FileText className="w-6 h-6 text-[#FF7A00]" />
+                </div>
+                <CardTitle className="text-lg text-[#000000] font-semibold leading-snug">
+                  {t('docs.agreement1.title')}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-0 mt-auto">
+                <a 
+                  href="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/dogovor-angliys-AP-1766653208882.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block w-full"
+                >
+                  <Button className="w-full bg-gradient-to-r from-[#FF7A00] to-[#FFB347] hover:from-[#FF7A00]/90 hover:to-[#FFB347]/90 text-white rounded-lg transition-all duration-300 font-medium border-none flex items-center justify-center gap-2 py-6">
+                    <FileText className="w-5 h-5" />
+                    {t('docs.download')}
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+            {/* Agreement 2 */}
+            <Card className="border-[#FFD347]/30 hover:border-[#FF7A00] hover:shadow-lg transition-all duration-300 bg-white group flex flex-col justify-between">
+              <CardHeader className="pb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#FF7A00]/10 to-[#FFB347]/10 rounded-xl flex items-center justify-center mb-4 group-hover:from-[#FF7A00]/20 group-hover:to-[#FFB347]/20 transition-all duration-300">
+                  <FileText className="w-6 h-6 text-[#FF7A00]" />
+                </div>
+                <CardTitle className="text-lg text-[#000000] font-semibold leading-snug">
+                  {t('docs.agreement2.title')}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-0 mt-auto">
+                <a 
+                  href="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/dogovor-OA-1766653211759.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block w-full"
+                >
+                  <Button className="w-full bg-gradient-to-r from-[#FF7A00] to-[#FFB347] hover:from-[#FF7A00]/90 hover:to-[#FFB347]/90 text-white rounded-lg transition-all duration-300 font-medium border-none flex items-center justify-center gap-2 py-6">
+                    <FileText className="w-5 h-5" />
+                    {t('docs.download')}
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+
       {/* Services Section */}
       <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-4">
@@ -341,6 +408,7 @@ export default function HomePage() {
         </div>
       </section>
 
+
       {/* Application Form Section - Moved to Bottom */}
       <section className="py-12 sm:py-16 bg-gradient-to-br from-[#000000] to-[#1a1a1a]">
         <div className="max-w-[1200px] mx-auto px-4">
@@ -350,6 +418,7 @@ export default function HomePage() {
         </div>
       </section>
 
+   
       <ApplyModal open={open} onClose={() => setOpen(false)} country={selectedCountry} />
 
       <Footer />
