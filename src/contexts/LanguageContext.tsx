@@ -35,20 +35,6 @@ const translations: Translations = {
     'hero.cta': 'Подобрать вакансию',
     'hero.consultation': 'Бесплатная консультация',
 
-'about.values.title': 'Наши ценности',
-
-'about.values.item1.title': 'Прозрачность',
-'about.values.item1.desc': 'Открыто предоставляем информацию о вакансиях, условиях и работодателях. Работаем честно и официально.',
-
-'about.values.item2.title': 'Ответственность',
-'about.values.item2.desc': 'Выполняем обязательства перед кандидатами и партнёрами на каждом этапе сотрудничества.',
-
-'about.values.item3.title': 'Поддержка',
-'about.values.item3.desc': 'Сопровождаем кандидатов от консультации до полноценного трудоустройства за рубежом.',
-
-'about.values.item4.title': 'Надежность',
-'about.values.item4.desc': 'Работаем только с проверенными работодателями и партнёрами. Все процессы оформляются официально.',
-
 // Gallery Section
     'about.gallery.title': 'Наша галерея',
     
